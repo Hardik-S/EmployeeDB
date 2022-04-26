@@ -1,0 +1,174 @@
+.App {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: darkblue;
+    margin-top: 50px;
+    padding-top: 50px;
+}
+
+.fullscreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    overflow: auto;
+    background: darkblue; /* Just to visualize the extent */
+}
+
+.information {
+    padding-top: 15px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: dodgerblue;
+}
+
+input {
+    width: 300px;
+    height: 50px;
+    font-size: 22px;
+    padding-left: 20px;
+    margin: 5px;
+    color: dodgerblue;
+}
+
+button {
+    background-color: rgb(246, 149, 149);
+    display: block;
+    opacity: 0.95;
+    width: 400px;
+    height: 50px;
+    margin-top: 5px;
+    transition: 0.15s;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    border: 2px solid #ff0000;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+}
+
+button:hover span {
+    cursor: pointer;
+    opacity: 1;
+    color: #000;
+    padding-right: 25px;
+    /* background-color: rgb(240, 232, 119); */
+    /* box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19); */
+}
+
+.button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -60px;
+    transition: 0.5s;
+}
+
+.button:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
+.button:active {
+    background-color: rgb(240, 232, 119);
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+        0 17px 50px 0 rgba(0, 0, 0, 0.19);
+    transform: translateY(4px);
+}
+
+.employees {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    /* padding-top: 15px; */
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: dodgerblue;
+}
+
+.employee {
+    width: 750px;
+    height: auto;
+    border: 1px solid black;
+    margin: 10px;
+    display: flex;
+    padding: 10px;
+    padding-bottom: 15px;
+    margin-bottom: 10px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.employee h3 {
+    margin: 20px;
+}
+/* 
+body {
+  margin: 60px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 60px;
+}
+.border {
+  font-size: 1.6rem;
+  display: grid;
+  place-items: center;
+  min-height: 200px;
+  border: 2px solid;
+  padding: 1rem;
+}
+.full {
+  border-image: linear-gradient(45deg, turquoise, greenyellow) 1;
+}
+.sides {
+  border-image: linear-gradient(to left, turquoise, greenyellow) 1 0;
+}
+.sides-2 {
+  border-image: linear-gradient(to bottom, turquoise, greenyellow) 0 1;
+}
+.linear-repeating {
+  border-width: 10px;
+  border-image: repeating-linear-gradient(45deg, turquoise, pink 4%) 1;
+}
+.radial-repeating {
+  border-width: 20px;
+  border-image: repeating-radial-gradient(circle at 10px, turquoise, pink 2px, greenyellow 4px, pink 2px) 1;
+}
+/* border radius example is drawn from this pen: https://codepen.io/shshaw/pen/MqMZGR I've added a few comments on why we're using certain properties 
+.full-withradius {
+  position: relative;
+  background: #fff;
+  
+/* The background extends to the outside edge of the padding. No background is drawn beneath the border.
+  background-clip: padding-box;
+  border: solid 2px transparent;
+  border-radius: 0.8rem;
+}
+.full-withradius:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  margin: -2px;
+ /* same as border width 
+  border-radius: inherit;
+ /* inherit container box's radius 
+  background: linear-gradient(to left, turquoise, greenyellow);
+} */
